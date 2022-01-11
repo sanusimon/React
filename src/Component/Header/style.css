@@ -1,0 +1,37 @@
+body{
+    
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+header{
+
+}
+
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    padding: 2em 0;
+    align-items: center;
+}
+.navBar h1{
+    margin: 0;
+    font-size: 3rem;
+    line-height: 1;
+}
+.navBar ul {
+    display: flex;
+}
+.navBar ul li{
+    margin: 0 20px;
+}
+.navBar ul li a{
+    color: #000;
+}

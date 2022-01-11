@@ -1,0 +1,33 @@
+
+
+
+.banner{
+    padding: 0;
+    height: calc(100vh - 95px);
+}
+.banner .banner_img{
+    height: 100%;
+    position: relative;
+}
+.banner .banner_img .img_{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.banner .banner_img .img_{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+ }
+ .banner .banner_img h1{
+    font-size: 6rem;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    color: #fff;
+ }
+ 

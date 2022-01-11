@@ -3,9 +3,35 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter as Router, Routes  , Route } from 'react-router-dom';
+
+import Home from './Home';
+import AboutPage from './Pages/About';
+import ServicePage from './Pages/Services';
+import ProdcutDetail from './Pages/Services/ProdcutDetail'
+
 
 ReactDOM.render(
   <React.StrictMode>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Home />}>
+          <Home/>
+        </Route>
+        <Route path="about" element={<AboutPage />}>
+          <AboutPage/>
+        </Route>
+        <Route path="services" element={<ServicePage />}>
+          <ServicePage/>
+        </Route>
+
+        <Route path="/services/:productId" element={< ProdcutDetail />}>
+          <ProdcutDetail />
+        </Route>
+
+      </Routes>
+    </Router>
+    
     <App />
   </React.StrictMode>,
   document.getElementById('root')
