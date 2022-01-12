@@ -16,7 +16,7 @@ function ServicePage(){
             
         })
     }, [])
-
+    
 
     return(
         <>
@@ -27,8 +27,7 @@ function ServicePage(){
                 <div className="container">
                     <div className="inner_">
                         {productList.map((product,index)=>{
-                            
-                            return<div className="item" key={index}>
+                            return<div className="item" key={product.id}>
                                 <div className="img_">
                                     <img src={product.image} alt="" />
                                 </div>
