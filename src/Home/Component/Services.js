@@ -1,8 +1,14 @@
 import {useState,useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/navigation'
+
+import SwiperCore,{Navigation} from 'swiper';
 
 
-
+SwiperCore.use([Navigation])
 
 
 function Services(){
@@ -10,7 +16,7 @@ function Services(){
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products?limit=4')
+        fetch('https://fakestoreapi.com/products?limit=6')
         .then(res=>res.json())
         .then(response=>{
             setProduct(response);
@@ -21,10 +27,14 @@ function Services(){
         <>
             <section className="service_sec">
                 <div className="container">
-                    <div className="inner_">
+                    <Swiper className="inner_"
+                        spaceBetween={50}
+                        slidesPerView={4}
+                        navigation={true}
+                    >
                         {product.map((product,index)=>{
                             
-                            return<div className="item" key={index.id}>
+                            return<SwiperSlide className="item" key={index.id}>
                                 <div className="img_">
                                     <img src={product.image} alt="" />
                                 </div>
@@ -33,9 +43,9 @@ function Services(){
                                     {/* <Link to={`/product/${i.id}`}> Read More </Link>  */}
                                     <Link to={`/services/${product.id}`}>Read More</Link>
                                 </div>
-                            </div>
+                            </SwiperSlide>
                         })}
-                    </div>
+                    </Swiper>
                     <div className="btn_wrap text-center">
                         <Link to="/services">Read More</Link>
                     </div>

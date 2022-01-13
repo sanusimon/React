@@ -35,3 +35,40 @@ header{
 .navBar ul li a{
     color: #000;
 }
+.navBar .menu{
+    display: flex;
+}
+.burgerMenu{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #000;
+    color: #fff;
+    z-index: 1;
+    transition: all .5s ease;
+    transform: translateX(100%);
+}
+.burgerMenu ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.burgerMenu ul li a{
+    color: #fff;
+    font-size: 4rem;
+}
+
+.openmenu .burgerMenu{
+    transform: none;
+}
+
+.menu_btn{
+    position: relative;
+    z-index: 5;
+    color: red;
+    cursor: pointer;
+}

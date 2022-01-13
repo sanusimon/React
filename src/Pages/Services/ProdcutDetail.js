@@ -31,20 +31,20 @@ function ProdcutDetail(){
     const ShowProduct = () => {
         return(
             <>
-                <div className="inner_">
-                        <div className="lf_">
-                            <img src={productList.image} alt='{productList.image}' />
-                        </div>
-                        <div className="rgt_">
-                           <h1>
-                               {productList.title}
-                           </h1>
-                           <p>
-                               {productList.description}
-                           </p>
-                           <label className='price'><strong>price </strong> : {productList.price}</label>
-                        </div>
+            <div className="inner_">
+                    <div className="lf_">
+                        <img src={productList.image} alt='{productList.image}' />
                     </div>
+                    <div className="rgt_">
+                        <h1>
+                            {productList.title}
+                        </h1>
+                        <p>
+                            {productList.description}
+                        </p>
+                        <label className='price'><strong>price </strong> : {productList.price}</label>
+                    </div>
+                </div>
             </>
         )
     }

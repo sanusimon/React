@@ -2,6 +2,11 @@
     border: 1px solid #ccc;
     padding: 2em;
 }
+.service_sec .inner_{
+    display: grid;
+    grid-template-columns: repeat(4,1fr); 
+     grid-gap: 2em;
+}
 
 .p_detail_ .inner_{
     display: grid;
