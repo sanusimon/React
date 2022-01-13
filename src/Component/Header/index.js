@@ -1,7 +1,14 @@
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import './style.css';
 
+
+
+
+
+
+
 function Header(){
+
     return (
         <header className='header'>
           <div className='container'>
@@ -12,13 +19,13 @@ function Header(){
               <div className='menu'>
                 <ul>
                     <li>
-                      <Link to="/">Home</Link>
+                      <NavLink className="navLink"  to="/">Home</NavLink >
                     </li>
                     <li>
-                      <Link to="/about">About</Link>
+                      <NavLink className="navLink"  to="/about">About</NavLink >
                     </li>
                     <li>
-                      <Link to="/services">Services</Link>
+                      <NavLink className="navLink"  to="/services" className='nav_link'>Services</NavLink >
                     </li>
                     <li>
                     </li>

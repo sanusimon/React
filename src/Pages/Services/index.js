@@ -9,7 +9,7 @@ function ServicePage(){
     const [productList , setProductList] = useState([])
 
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
+        fetch('https://fakestoreapi.com/products/')
         .then(res=>res.json())
         .then(response => {
             setProductList(response);
@@ -19,7 +19,6 @@ function ServicePage(){
     
     const uniqueTags = [];
     const filterList = productList.map((pro,i)=>{
-        
         if (uniqueTags.indexOf(pro.category) === -1) {
             uniqueTags.push(pro.category)
             return(
@@ -28,6 +27,10 @@ function ServicePage(){
         }
         
     })
+
+    // const filterbox = (e) =>{
+    //    // console.log(e.target.value);
+    // }
 
     return(
         <>
