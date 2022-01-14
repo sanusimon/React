@@ -39,7 +39,10 @@ function Header(){
                     <NavLink className="navLink" to="/about">About</NavLink >
                   </li>
                   <li>
-                    <NavLink className="navLink" to="/services" className='nav_link'>Services</NavLink >
+                    <NavLink className="navLink" to="/services">Services</NavLink >
+                  </li>
+                  <li>
+                    <NavLink className="NavLink" to='/login'>Login</NavLink>
                   </li>
                 </ul>
                 <div onClick={burger_btn} className={open ? 'active menu_btn' : 'menu_btn'}>

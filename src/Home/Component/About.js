@@ -1,18 +1,10 @@
 import { Link } from 'react-router-dom';
-import { useState,useEffect } from 'react';
 function About(){
 
-    const [values , setValue] =  useState([]);
 
-    const onChange = ((e)=>{
-       setValue(e.target.value);
-       console.log(setValue);
-    })
     
 
-    useEffect(()=>{
-        //setValue(onChange);
-    })
+    
 
     return(
         <>
@@ -32,8 +24,7 @@ function About(){
                     </div>
                 </div>
 
-                <input value={values} onKeyUp={onChange} type='text' />
-                <p>{values}</p>
+               
             </div>
         </section>
         </>    

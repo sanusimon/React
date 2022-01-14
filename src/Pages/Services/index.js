@@ -4,15 +4,17 @@ import { Link } from 'react-router-dom';
 import {useState , useEffect} from 'react'
 import '../Services/product.css'
 
-function ServicePage(){
+function ServicePage(props){
 
     const [productList , setProductList] = useState([])
+    const [loading , setLoading] = useState(true)
 
     useEffect(() => {
         fetch('https://fakestoreapi.com/products/')
         .then(res=>res.json())
         .then(response => {
             setProductList(response);
+            setLoading(false);
             console.log(response)
         })
     }, [])
@@ -28,6 +30,33 @@ function ServicePage(){
         
     })
 
+    const Loading = () =>{
+        return(
+            <>
+                <h1>Loading...</h1>
+            </>
+        )
+    }
+
+   const ShowProduct = () =>{
+        return(
+            <>
+                {productList.map((product)=>{
+                    return<div className="item" key={product.id}>
+                        <div className="img_">
+                            <img src={product.image} alt="" />
+                        </div>
+                        <div className="cap_">
+                            <h3>{product.title}</h3>
+                            <Link to={`/services/${product.id}`}>Read More</Link>
+                        </div>
+                    </div>
+                })}
+            </>
+        )
+    }
+
+
     // const filterbox = (e) =>{
     //    // console.log(e.target.value);
     // }
@@ -36,6 +65,7 @@ function ServicePage(){
         <>
             <Header />
             <Banner />
+
 
             <section className="service_sec">
                 <div className="container">
@@ -46,21 +76,18 @@ function ServicePage(){
                         </select>
                     </div>
                     <div className="inner_">
-                        {productList.map((product)=>{
-                            return<div className="item" key={product.id}>
-                                <div className="img_">
-                                    <img src={product.image} alt="" />
-                                </div>
-                                <div className="cap_">
-                                    <h3>{product.title}</h3>
-                                    <Link to={`/services/${product.id}`}>Read More</Link>
-                                </div>
-                            </div>
-                        })}
+
+                    {loading ? <Loading /> : <ShowProduct /> }
+
+                        
                     </div>
                     
                 </div>
             </section>
+
+            
+
+            
 
         </>
     )

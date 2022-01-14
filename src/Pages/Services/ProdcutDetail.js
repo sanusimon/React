@@ -6,9 +6,10 @@ import '../Services/product.css'
 
 function ProdcutDetail(){
 
-    const [productList , setProductList] = useState([])
+    const [productList , setProductList] = useState([]);
     const [loading , setLoading] = useState(true);
-    const {productId} = useParams()
+    const [cart , setCart] = useState(0);
+    const {productId} = useParams();
 
     useEffect(() => {
         fetch(`https://fakestoreapi.com/products/${productId}`)
@@ -28,6 +29,13 @@ function ProdcutDetail(){
         )
     }
 
+    const AddCart = () =>{
+        setCart(cart + 1);
+    }
+    const RemCart = () =>{
+        setCart(false)
+    }
+
     const ShowProduct = () => {
         return(
             <>
@@ -43,6 +51,14 @@ function ProdcutDetail(){
                             {productList.description}
                         </p>
                         <label className='price'><strong>price </strong> : {productList.price}</label>
+
+                        <div className='cart_btn'>
+                            <button className='btn_' onClick={AddCart}>Cart <span> {cart} </span></button>
+                        </div>
+                        <div className='cart_btn'>
+                            <button className='btn_' onClick={RemCart}>Remove Cart <span> </span></button>
+                        </div>
+
                     </div>
                 </div>
             </>

@@ -9,7 +9,8 @@ import Home from './Home';
 import AboutPage from './Pages/About';
 import ServicePage from './Pages/Services';
 import ProdcutDetail from './Pages/Services/ProdcutDetail'
-
+import Login from './Pages/Login'
+import Register from './Pages/Register';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -24,10 +25,15 @@ ReactDOM.render(
         <Route path="services" element={<ServicePage />}>
           <ServicePage/>
         </Route>
+        <Route path="login" element={<Login />}>
+          <Login />
+        </Route>
 
         <Route path="/services/:productId" element={< ProdcutDetail />}>
           <ProdcutDetail />
         </Route>
+
+        <Route path='register' element={<Register/>}></Route>
 
       </Routes>
     </Router>
