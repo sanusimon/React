@@ -16,6 +16,7 @@ function ServicePage(){
         .then(response => {
             setProductList(response);
             setLoading(false);
+            console.log(response)
         })
     }, [limit])
     
@@ -38,26 +39,14 @@ function ServicePage(){
         )
     }
 
-   
-  
-
-    
-
-    
-    
-
     const LoadMore= () =>{
         setLimit(limit+4)
-        
     }
 
    const ShowProduct = () =>{
         return(
             <>
-                {productList.map((product,index)=>{
-                    if(productList.length - 1 === index){
-                        console.log('sss')
-                    }
+                {productList.map((product)=>{
                     return<div className="item" key={product.id}>
                         <div className="img_">
                             <img src={product.image} alt="" />
@@ -68,11 +57,10 @@ function ServicePage(){
                         </div>
                     </div>
                 })}
-                <div className='sbmt_btn' onClick={LoadMore}> Load More </div>
+                <div className='sbmt_btn'  onClick={LoadMore}> Load More </div>
             </>
         )
     }
-    
 
 
     // const filterbox = (e) =>{
