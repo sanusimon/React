@@ -28,9 +28,9 @@
 .sbmt_btn{
     width: auto;
     max-width: 250px;
-    margin: 0 auto;
     border: 1px solid #cccccc;
     background: transparent;
     cursor: pointer;
     padding: 1em 2em;
+    text-align: center;
 }

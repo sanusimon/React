@@ -5,7 +5,11 @@
 .service_sec .inner_{
     display: grid;
     grid-template-columns: repeat(4,1fr); 
-     grid-gap: 2em;
+    grid-gap: 2em;
+}
+.service_sec .inner_ .sbmt_btn{
+    grid-column: 1 / -1;
+    margin: 0 auto;
 }
 
 .p_detail_ .inner_{

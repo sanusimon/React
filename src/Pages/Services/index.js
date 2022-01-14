@@ -4,20 +4,20 @@ import { Link } from 'react-router-dom';
 import {useState , useEffect} from 'react'
 import '../Services/product.css'
 
-function ServicePage(props){
+function ServicePage(){
 
     const [productList , setProductList] = useState([])
     const [loading , setLoading] = useState(true)
+    const [limit , setLimit] = useState(4)
 
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products/')
+        fetch('https://fakestoreapi.com/products?limit='+limit)
         .then(res=>res.json())
         .then(response => {
             setProductList(response);
             setLoading(false);
-            console.log(response)
         })
-    }, [])
+    }, [limit])
     
     const uniqueTags = [];
     const filterList = productList.map((pro,i)=>{
@@ -38,10 +38,26 @@ function ServicePage(props){
         )
     }
 
+   
+  
+
+    
+
+    
+    
+
+    const LoadMore= () =>{
+        setLimit(limit+4)
+        
+    }
+
    const ShowProduct = () =>{
         return(
             <>
-                {productList.map((product)=>{
+                {productList.map((product,index)=>{
+                    if(productList.length - 1 === index){
+                        console.log('sss')
+                    }
                     return<div className="item" key={product.id}>
                         <div className="img_">
                             <img src={product.image} alt="" />
@@ -52,9 +68,11 @@ function ServicePage(props){
                         </div>
                     </div>
                 })}
+                <div className='sbmt_btn' onClick={LoadMore}> Load More </div>
             </>
         )
     }
+    
 
 
     // const filterbox = (e) =>{
@@ -78,7 +96,8 @@ function ServicePage(props){
                     <div className="inner_">
 
                     {loading ? <Loading /> : <ShowProduct /> }
-
+                    
+                    
                         
                     </div>
                     

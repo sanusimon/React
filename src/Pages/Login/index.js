@@ -10,15 +10,15 @@ function Login(){
             <section className="login_page">
                 <div className="container">
                     <div className="inner_">
-                        <div className="form_box">
+                        <form className="form_box" action="/">
                             <h2>Login</h2>
                             <div className="box_">
-                                <input type="text" placeholder="User Name" />
-                                <input type="text" placeholder="Password" />
+                                <input type="text" placeholder="User Name" required />
+                                <input type="text" placeholder="Password" required />
                                 <input className="sbmt_btn" type="submit" value="SUBMIT" id="submit" />
                                 <span>Don’t have an account? <Link to="/register">Register</Link></span>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </section>

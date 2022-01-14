@@ -28,7 +28,7 @@ function Header(){
           <div className='container'>
             <div className='navBar'>
               <div className='logo'>
-                <h1>LOGO</h1>
+                <h1> <NavLink to="/"> LOGO  </NavLink></h1>
               </div>
               <div className='menu'>
                 <ul>
