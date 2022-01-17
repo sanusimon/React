@@ -25,7 +25,29 @@
     background-position: center;
     object-fit: cover;
 }
+.service_sec .inner_ .cap_{
+    text-align: center;
+}
 
+.cmn_button{
+    background: transparent;
+    color: #000;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    padding: .5em 2em;
+    margin-top: 1em;
+    display: inline-block;
+    border-radius: 15px;
+    transition: all .3s ease;
+}
+.cmn_button:hover{
+    background: #C44C4C;
+    color: #fff;
+}
+
+.service_sec .inner_ .cap_ h3{
+    font-size: 2rem;
+}
 .text-center{
     text-align: center;
 }
@@ -33,9 +55,18 @@
 .btn_wrap{
     margin-top: 2em;
 }
-.btn_wrap a{
-    background: aquamarine;    
-    color: #000;
-    font-size: 18px;
-    padding: 6px 2em;
+.btn_wrap .sbmt_btn{
+    background: #C44C4C;
+    color: #fff;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    padding: .5em 2em;
+    border-radius: 15px;
+    display: inline-block;
+    transition: all .3s ease;
 }
+.btn_wrap .sbmt_btn:hover{
+    background: transparent;
+    color: #000;
+}
+

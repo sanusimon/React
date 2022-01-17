@@ -39,15 +39,16 @@ function Services(){
                                     <img src={product.image} alt="" />
                                 </div>
                                 <div className="cap_">
-                                    <p>{product.description}</p>
+                                    <h3>{product.title.substring(0,12)}...</h3>
+                                    <p>{product.description.substring(0,120)}...</p>
                                     {/* <Link to={`/product/${i.id}`}> Read More </Link>  */}
-                                    <Link to={`/services/${product.id}`}>Read More</Link>
+                                    <Link className='cmn_button' to={`/services/${product.id}`}>Read More</Link>
                                 </div>
                             </SwiperSlide>
                         })}
                     </Swiper>
                     <div className="btn_wrap text-center">
-                        <Link to="/services">Read More</Link>
+                        <Link className='sbmt_btn' to="/services">Read More</Link>
                     </div>
 
                 </div>
